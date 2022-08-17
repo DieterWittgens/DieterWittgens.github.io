@@ -9,12 +9,14 @@
 <script>
     function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
 </script>
+
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
 <form action="https://turningpointau--dev.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
-    <input type=hidden name='captcha_settings' value='{"keyname":"COL_Web_to_Case_ReCAPTCHA_Key_Pair","fallback":"true","orgId":"00D2O000000AZAV","ts":""}'>
+    <input type=hidden name='captcha_settings'
+        value='{"keyname":"COL_Web_to_Case_ReCAPTCHA_Key_Pair","fallback":"true","orgId":"00D2O000000AZAV","ts":""}'>
     <input type=hidden name="orgid" value="00D2O000000AZAV">
     <input type=hidden name="retURL" value="https://www.counsellingonline.org.au/">
 
@@ -26,7 +28,7 @@
     <!--  value="dwittgens@deloitte.com.au">                                      -->
     <!--  ----------------------------------------------------------------------  -->
 
-    <input type=hidden name="recordType" value="0122O0000026SOW"> <!-- AOD Support, change for different env -->
+    <input type=hidden name="recordType" value="0129h0000002521"> <!-- AOD Support, change for different env -->
     <!--
     <label for="recordType">Case Record Type</label><select id="recordType" name="recordType">
         <option value="">--None--</option>
@@ -71,7 +73,7 @@
     </select>
     -->
 
-    <input type=hidden name="00N2O00000KUGQ1" value="Feedback">
+    <input type=hidden name="00N9h000000BLM5" value="Feedback">
     <!--Request Type, custom field ID used (change per env)-->
     <!--
     Request Type:<select id="00N2O00000KUGQ1" name="00N2O00000KUGQ1" title="Request Type">
@@ -85,7 +87,7 @@
 
     <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-    What is your enquiry about?<select id="00N2O00000Kurqb" name="00N2O00000Kurqb" title="Enquiry Type">
+    What is your enquiry about?<select id="00N9h000000BwDZ" name="00N9h000000BwDZ" title="Enquiry Type">
         <option value="">--None--</option>
         <option value="Technical problems (login or usability issue)">Technical problems (login or usability issue)
         </option>
