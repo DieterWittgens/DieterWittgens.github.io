@@ -7,79 +7,104 @@
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
 </script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
-    <b>let this work?</b>
+<h1>SIT Test</h1>
 <form action="https://turningpointau--sit.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-<input type=hidden name='captcha_settings' value='{"keyname":"COL_SIT_ReCAPTCHA_Key","fallback":"true","orgId":"00D4Y0000008b6w","ts":""}'>
-<input type=hidden name="orgid" value="00D4Y0000008b6w">
-<input type=hidden name="retURL" value="https://www.counsellingonline.org.au/">
+    <input type=hidden name='captcha_settings'
+        value='{"keyname":"COL_SIT_ReCAPTCHA_Key","fallback":"true","orgId":"00D4Y0000008b6w","ts":""}'>
+    <input type=hidden name="orgid" value="00D4Y0000008b6w">
+    <input type=hidden name="retURL" value="https://www.counsellingonline.org.au/">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="dwittgens@deloitte.com.au">                                      -->
-<!--  ----------------------------------------------------------------------  -->
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="dwittgens@deloitte.com.au">                                      -->
+    <!--  ----------------------------------------------------------------------  -->
 
-<label for="recordType">Case Record Type</label><select  id="recordType" name="recordType"><option value="">--None--</option><option value="0124a0000004M7k">AOD</option>
-<option value="0124Y000000HOUF">AOD Support</option>
-<option value="0124a0000004M7l">DACAS</option>
-<option value="0124a0000004M7m">DDAL</option>
-<option value="0124a0000004M7n">Disposal</option>
-<option value="0124a0000004M7o">Gambling</option>
-<option value="0124a0000004M7p">N&amp;M After Hours</option>
-<option value="0124a0000004M7q">N&amp;M and Dental Practitioner Support</option>
-<option value="0124a0000004M7r">Pharmacotherapy</option>
-<option value="0124a0000004M7s">SafeScript Pharmaceutical Helpline</option>
-</select><br>
+    <input type=hidden name="recordType" value="0124Y000000HOUF"> <!-- AOD Support, change for different env -->
+    <!--
+    <label for="recordType">Case Record Type</label><select id="recordType" name="recordType">
+        <option value="">--None--</option>
+        <option value="0124a0000004M7k">AOD</option>
+        <option value="0122O0000026SOW">AOD Support</option>
+        <option value="0124a0000004M7l">DACAS</option>
+        <option value="0124a0000004M7m">DDAL</option>
+        <option value="0124a0000004M7n">Disposal</option>
+        <option value="0124a0000004M7o">Gambling</option>
+        <option value="0124a0000004M7p">N&amp;M After Hours</option>
+        <option value="0124a0000004M7q">N&amp;M and Dental Practitioner Support</option>
+        <option value="0124a0000004M7r">Pharmacotherapy</option>
+        <option value="0124a0000004M7s">SafeScript Pharmaceutical Helpline</option>
+    </select>-->
 
-AOD Service:<select  id="00N4a000000QAgQ" name="00N4a000000QAgQ" title="AOD Service"><option value="">--None--</option><option value="Directline (Vic)">Directline (Vic)</option>
-<option value="Adis (Tas)">Adis (Tas)</option>
-<option value="Adis (NT)">Adis (NT)</option>
-<option value="Family Drug Helpline (Vic)">Family Drug Helpline</option>
-<option value="Ice Advice Line (Vic)">Ice Advice Line (Vic)</option>
-<option value="CounsellingOnline (National)">CounsellingOnline (National)</option>
-<option value="Inner East Intake &amp; Assessment (Vic)">Inner East Intake &amp; Assessment (Vic)</option>
-<option value="Victoria Police eReferral (VPeR)">Victoria Police eReferral (VPeR)</option>
-<option value="Directline Online">Directline Online</option>
-</select><br>
+    <input type=hidden name="00N4a000000QAgQ" value="CounsellingOnline (National)">
+    <!-- AOD Service custom field, different for each env -->
+    <!--
+    AOD Service:<select id="00N4a000000QAgQ" name="00N4a000000QAgQ" title="AOD Service">
+        <option value="">--None--</option>
+        <option value="Directline (Vic)">Directline (Vic)</option>
+        <option value="Adis (Tas)">Adis (Tas)</option>
+        <option value="Adis (NT)">Adis (NT)</option>
+        <option value="Family Drug Helpline (Vic)">Family Drug Helpline</option>
+        <option value="Ice Advice Line (Vic)">Ice Advice Line (Vic)</option>
+        <option value="CounsellingOnline (National)">CounsellingOnline (National)</option>
+        <option value="Inner East Intake &amp; Assessment (Vic)">Inner East Intake &amp; Assessment (Vic)</option>
+        <option value="Victoria Police eReferral (VPeR)">Victoria Police eReferral (VPeR)</option>
+        <option value="Directline Online">Directline Online</option>
+    </select>-->
 
-<label for="status">Status</label><select  id="status" name="status"><option value="">--None--</option><option value="On Hold">On Hold</option>
-<option value="Escalated">Escalated</option>
-<option value="Closed">Closed</option>
-<option value="New">New</option>
-<option value="Open">Open</option>
-<option value="Awaiting Callback">Awaiting Callback</option>
-</select><br>
+    <input type=hidden name="status" value="Open">
+    <!--
+    <label for="status">Status</label><select id="status" name="status">
+        <option value="">--None--</option>
+        <option value="On Hold">On Hold</option>
+        <option value="Escalated">Escalated</option>
+        <option value="Closed">Closed</option>
+        <option value="New">New</option>
+        <option value="Open">Open</option>
+        <option value="Awaiting Callback">Awaiting Callback</option>
+    </select>
+    -->
 
-Request Type:<select  id="00N4Y0000017m8J" name="00N4Y0000017m8J" title="Request Type"><option value="">--None--</option><option value="Counselling">Counselling</option>
-<option value="Support">Support</option>
-<option value="Feedback">Feedback</option>
-</select><br>
+    <input type=hidden name="00N4Y0000017m8J" value="Feedback">
+    <!--Request Type, custom field ID used (change per env)-->
+    <!--
+    Request Type:<select id="00N2O00000KUGQ1" name="00N2O00000KUGQ1" title="Request Type">
+        <option value="">--None--</option>
+        <option value="Counselling">Counselling</option>
+        <option value="Support">Support</option>
+        <option value="Feedback">Feedback</option>
+    </select>-->
 
-<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    <label for="name">Name</label><input id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-Enquiry Type:<select  id="00N4Y00000184DA" name="00N4Y00000184DA" title="Enquiry Type"><option value="">--None--</option><option value="Technical problems (login or usability issue)">Technical problems (login or usability issue)</option>
-<option value="Service feedback (compliments or complaints)">Service feedback (compliments or complaints)</option>
-<option value="General service enquiry (clarifying service, delay in response)">General service enquiry (clarifying service, delay in response)</option>
-<option value="Submitting a personal story">Submitting a personal story</option>
-<option value="Other">Other</option>
-</select><br>
+    What is your enquiry about?<select id="00N4Y00000184DA" name="00N4Y00000184DA" title="Enquiry Type">
+        <option value="">--None--</option>
+        <option value="Technical problems (login or usability issue)">Technical problems (login or usability issue)
+        </option>
+        <option value="Service feedback (compliments or complaints)">Service feedback (compliments or complaints)
+        </option>
+        <option value="General service enquiry (clarifying service, delay in response)">General service enquiry
+            (clarifying service, delay in response)</option>
+        <option value="Submitting a personal story">Submitting a personal story</option>
+        <option value="Other">Other</option>
+    </select><br>
 
-<label for="description">Description</label><textarea name="description"></textarea><br>
+    <label for="description">Please enter your message</label><textarea name="description"></textarea><br>
 
-<input type="hidden"  id="external" name="external" value="1" /><br>
+    <input type="hidden" id="external" name="external" value="1" /><br>
 
-<div class="g-recaptcha" data-sitekey="6LfyQkIhAAAAAOYSqgLr8b-PSUyzLdXRUTFAiB4Y"></div><br>
-<input type="submit" name="submit">
+    <div class="g-recaptcha" data-sitekey="6LfyQkIhAAAAAOYSqgLr8b-PSUyzLdXRUTFAiB4Y"></div><br>
+    <input type="submit" name="submit">
 
 </form>
