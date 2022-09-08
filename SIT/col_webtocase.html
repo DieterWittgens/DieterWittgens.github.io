@@ -29,65 +29,22 @@
     <!--  value="dwittgens@deloitte.com.au">                                      -->
     <!--  ----------------------------------------------------------------------  -->
 
-    <input type=hidden name="recordType" value="0124Y000000HOUF"> <!-- AOD Support, change for different env -->
-    <!--
-    <label for="recordType">Case Record Type</label><select id="recordType" name="recordType">
-        <option value="">--None--</option>
-        <option value="0124a0000004M7k">AOD</option>
-        <option value="0122O0000026SOW">AOD Support</option>
-        <option value="0124a0000004M7l">DACAS</option>
-        <option value="0124a0000004M7m">DDAL</option>
-        <option value="0124a0000004M7n">Disposal</option>
-        <option value="0124a0000004M7o">Gambling</option>
-        <option value="0124a0000004M7p">N&amp;M After Hours</option>
-        <option value="0124a0000004M7q">N&amp;M and Dental Practitioner Support</option>
-        <option value="0124a0000004M7r">Pharmacotherapy</option>
-        <option value="0124a0000004M7s">SafeScript Pharmaceutical Helpline</option>
-    </select>-->
+    <!-- AOD Support, change for different env -->
+    <input type=hidden name="recordType" value="0124Y000000HOUF"> 
 
-    <input type=hidden name="00N4a000000QAgQ" value="CounsellingOnline (National)">
     <!-- AOD Service custom field, different for each env -->
-    <!--
-    AOD Service:<select id="00N4a000000QAgQ" name="00N4a000000QAgQ" title="AOD Service">
-        <option value="">--None--</option>
-        <option value="Directline (Vic)">Directline (Vic)</option>
-        <option value="Adis (Tas)">Adis (Tas)</option>
-        <option value="Adis (NT)">Adis (NT)</option>
-        <option value="Family Drug Helpline (Vic)">Family Drug Helpline</option>
-        <option value="Ice Advice Line (Vic)">Ice Advice Line (Vic)</option>
-        <option value="CounsellingOnline (National)">CounsellingOnline (National)</option>
-        <option value="Inner East Intake &amp; Assessment (Vic)">Inner East Intake &amp; Assessment (Vic)</option>
-        <option value="Victoria Police eReferral (VPeR)">Victoria Police eReferral (VPeR)</option>
-        <option value="Directline Online">Directline Online</option>
-    </select>-->
+    <input type=hidden name="00N4a000000QAgQ" value="CounsellingOnline (National)"> 
 
     <input type=hidden name="status" value="Open">
-    <!--
-    <label for="status">Status</label><select id="status" name="status">
-        <option value="">--None--</option>
-        <option value="On Hold">On Hold</option>
-        <option value="Escalated">Escalated</option>
-        <option value="Closed">Closed</option>
-        <option value="New">New</option>
-        <option value="Open">Open</option>
-        <option value="Awaiting Callback">Awaiting Callback</option>
-    </select>
-    -->
 
-    <input type=hidden name="00N4Y0000017m8J" value="Feedback">
     <!--Request Type, custom field ID used (change per env)-->
-    <!--
-    Request Type:<select id="00N2O00000KUGQ1" name="00N2O00000KUGQ1" title="Request Type">
-        <option value="">--None--</option>
-        <option value="Counselling">Counselling</option>
-        <option value="Support">Support</option>
-        <option value="Feedback">Feedback</option>
-    </select>-->
+    <input type=hidden name="00N4Y0000017m8J" value="Feedback"> 
 
     <label for="name">Name</label><input id="name" maxlength="80" name="name" size="20" type="text" required/><br>
 
     <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" required/><br>
 
+    <!-- Enquiry type, ID changes depending on env -->
     What is your enquiry about?<select id="00N4Y00000184DA" name="00N4Y00000184DA" title="Enquiry Type" required>
         <option value="">--None--</option>
         <option value="Technical problems (login or usability issue)">Technical problems (login or usability issue)
