@@ -1,0 +1,15 @@
+.slds-form-element__control {
+    width: 50px;
+}
+
+.slds-input__icon-group {
+    display: none;
+}
+
+.slds-icon {
+    display: none;
+}
+
+.embeddedServiceSidebar .sidebarBody {
+    overflow-y: scroll;
+}
