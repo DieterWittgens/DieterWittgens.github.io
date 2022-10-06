@@ -11,7 +11,7 @@
             .embeddedServiceHelpButton .helpButton .uiButton:focus {
                 outline: 1px solid #005290;
             }
-
+            
             .slds-form-element__control {
                 width: 50px;
             }
@@ -27,7 +27,7 @@
             .embeddedServiceSidebar .sidebarBody {
                 overflow-y: scroll;
             }
-
+            
             .slds-listbox {
                 height: 50px;
                 overflow-y: scroll;
@@ -57,8 +57,7 @@
         
                 embedded_svc.settings.enabledFeatures = ['LiveAgent'];
                 embedded_svc.settings.entryFeature = 'LiveAgent';
-        
-                // MY SNIPPET SETTINGS
+
                 embedded_svc.settings.extraPrechatFormDetails = [{ "label": "Case Origin", "value": "Chat", "displayToAgent": false }];
 
                 embedded_svc.settings.extraPrechatInfo = [{
@@ -104,8 +103,7 @@
                     "label": "Case Origin"
                     }]
                 }];
-                // END SNIPPET SETTINGS
-
+        
                 embedded_svc.init(
                     'https://turningpointau--sit.sandbox.my.salesforce.com',
                     'https://turningpointau--sit.sandbox.my.site.com/directline',
@@ -115,7 +113,7 @@
                     {
                         baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-vwfla6.salesforceliveagent.com/content',
                         deploymentId: '5724Y000000013A',
-                        buttonId: '5739r0000001gbV',
+                        buttonId: '5739r0000001gjZ',
                         baseLiveAgentURL: 'https://d.la2s-core1.sfdc-vwfla6.salesforceliveagent.com/chat',
                         eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2O0000000KfnUAE_183a5b11801',
                         isOfflineSupportEnabled: false
@@ -134,5 +132,7 @@
                 initESW('https://service.force.com');
             }
         </script>
+        <!-- Copy and paste embeddedSvcSettings.js into the script tag before the line 'embedded_svc.init' -->
+        <!-- Copy and paste additionalStyling.css into the style tag -->
     </body>
 </html>
