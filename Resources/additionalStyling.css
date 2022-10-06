@@ -13,3 +13,8 @@
 .embeddedServiceSidebar .sidebarBody {
     overflow-y: scroll;
 }
+
+.slds-listbox {
+    height: 50px;
+    overflow-y: scroll;
+}
