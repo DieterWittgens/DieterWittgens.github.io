@@ -9,6 +9,7 @@
 <script>
  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
 </script>
+<script src="/components/header.js" type="text/javascript" defer></script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
@@ -18,55 +19,58 @@
     REQUEST TYPE is set in a trigger based on enquiry type
 -->
 
-<h1>Dental Practitioner - Web-to-Case - SIT</h1>
-<form action="https://turningpointau--sit.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+<header-component></header-component>
+<div class="content">
+    <h1>Dental Practitioner - Web-to-Case - SIT</h1>
+    <form action="https://turningpointau--sit.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-    <input type=hidden name='captcha_settings' value='{"keyname":"COL_SIT_ReCAPTCHA_Key","fallback":"true","orgId":"00D4Y0000008b6w","ts":""}'>
-    <input type=hidden name="orgid" value="00D4Y0000008b6w">
-    <input type=hidden name="retURL" value="https://www.dpsupport.org.au/">
+        <input type=hidden name='captcha_settings' value='{"keyname":"COL_SIT_ReCAPTCHA_Key","fallback":"true","orgId":"00D4Y0000008b6w","ts":""}'>
+        <input type=hidden name="orgid" value="00D4Y0000008b6w">
+        <input type=hidden name="retURL" value="https://www.dpsupport.org.au/">
 
-    <input type=hidden name="recordType" value="0124Y000000HYH3"> <!-- NM Email, change for different env -->
+        <input type=hidden name="recordType" value="0124Y000000HYH3"> <!-- NM Email, change for different env -->
 
-    <!-- Service (Service_N_M__c) custom field, different for each env -->
-    <input type=hidden name="00N4a000000QAjm" value="Dental Practitioner Support">
+        <!-- Service (Service_N_M__c) custom field, different for each env -->
+        <input type=hidden name="00N4a000000QAjm" value="Dental Practitioner Support">
 
-    <input type=hidden name="status" value="Open">
+        <input type=hidden name="status" value="Open">
 
-    <!-- Enquiry Type ID will change per env -->
-    What is your email about?<select id="00N4Y00000184DA" name="00N4Y00000184DA" title="Enquiry Type" required>
-        <option value="">- Select a value -</option>
-        <option value="Request for support or advice">Request for support or advice</option>
-        <option value="Service feedback (compliments or complaints)">Service feedback (compliments or complaints)
-        </option>
-        <option value="Website feedback">Website feedback</option>
-        <option value="Request Dental Practitioner Support promotional resources">Request Dental Practitioner Support promotional resources</option>
-        <option value="I have a question">I have a question</option>
-    </select><br>
+        <!-- Enquiry Type ID will change per env -->
+        What is your email about?<select id="00N4Y00000184DA" name="00N4Y00000184DA" title="Enquiry Type" required>
+            <option value="">- Select a value -</option>
+            <option value="Request for support or advice">Request for support or advice</option>
+            <option value="Service feedback (compliments or complaints)">Service feedback (compliments or complaints)
+            </option>
+            <option value="Website feedback">Website feedback</option>
+            <option value="Request Dental Practitioner Support promotional resources">Request Dental Practitioner Support promotional resources</option>
+            <option value="I have a question">I have a question</option>
+        </select><br>
 
-    <!--Type of Caller field, dependant on Service = 'Nurse & Midwife Support'. Id changes per env -->
-    What is your role?<select id="00N4a000000QAk3" name="00N4a000000QAk3" title="What is your role?" required>
-        <option value="">--None--</option>
-        <option value="Dentist">Dentist</option>
-        <option value="Dental Nurse/Assistant">Dental Nurse/Assistant</option>
-        <option value="Dental Hygienist">Dental Hygienist</option>
-        <option value="Dental Prosthetist/Orhotist">Dental Prosthetist/Orhotist</option>
-        <option value="Dental Therapist">Dental Therapist</option>
-        <option value="Oral Health Therapist">Oral Health Therapist</option>
-        <option value="Receptionist/Admin/Practice Manager">Receptionist/Admin/Practice Manager</option>
-        <option value="Family/Friend">Family/Friend</option>
-        <option value="Student">Student</option>
-        <option value="Other">Other</option>
-    </select><br>
+        <!--Type of Caller field, dependant on Service = 'Nurse & Midwife Support'. Id changes per env -->
+        What is your role?<select id="00N4a000000QAk3" name="00N4a000000QAk3" title="What is your role?" required>
+            <option value="">--None--</option>
+            <option value="Dentist">Dentist</option>
+            <option value="Dental Nurse/Assistant">Dental Nurse/Assistant</option>
+            <option value="Dental Hygienist">Dental Hygienist</option>
+            <option value="Dental Prosthetist/Orhotist">Dental Prosthetist/Orhotist</option>
+            <option value="Dental Therapist">Dental Therapist</option>
+            <option value="Oral Health Therapist">Oral Health Therapist</option>
+            <option value="Receptionist/Admin/Practice Manager">Receptionist/Admin/Practice Manager</option>
+            <option value="Family/Friend">Family/Friend</option>
+            <option value="Student">Student</option>
+            <option value="Other">Other</option>
+        </select><br>
 
-    <label for="name">Name</label><input id="name" maxlength="80" name="name" size="20" type="text" required /><br>
+        <label for="name">Name</label><input id="name" maxlength="80" name="name" size="20" type="text" required /><br>
 
-    <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" required /><br>
+        <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" required /><br>
 
-    <label for="description">Please enter your message</label><textarea name="description" required></textarea><br>
+        <label for="description">Please enter your message</label><textarea name="description" required></textarea><br>
 
-    <input type="hidden"  id="external" name="external" value="1" /><br>
+        <input type="hidden"  id="external" name="external" value="1" /><br>
 
-    <div class="g-recaptcha" data-sitekey="6LfyQkIhAAAAAOYSqgLr8b-PSUyzLdXRUTFAiB4Y"></div><br>
-    <input type="submit" name="submit">
+        <div class="g-recaptcha" data-sitekey="6LfyQkIhAAAAAOYSqgLr8b-PSUyzLdXRUTFAiB4Y"></div><br>
+        <input type="submit" name="submit">
 
-</form>
+    </form>
+</div>
