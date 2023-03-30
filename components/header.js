@@ -53,7 +53,7 @@ class Header extends HTMLElement {
             </div>
         `;
 
-        const isLoggedIn = localStorage['access'] == 'Y';
+        const isLoggedIn = true; // localStorage['access'] == 'Y';
         console.log(isLoggedIn);
         const contentStyle = isLoggedIn ? '' : 'display: none;';
         const loginButtonText = isLoggedIn ? 'Log out' : 'Log in';
