@@ -1,3 +1,18 @@
 {
-  "test": "Hello, BEENLH!"
+  "site": "BEENLH",
+  "inventory": [
+    {
+      "uniworks_user": "BEEN",
+      "uniworks_site": "BEENLH",
+      "create_site": "BEENLH",
+      "product_id": "2613",
+      "production_order_number": "414864",
+      "create_date": "24/11/2025",
+      "location_id": "BENBCH",
+      "pack_tally": 10,
+      "net_weight": 12.321,
+      "gross_weight": 15.123,
+      "saleable_weight": 13.123
+    }
+  ]
 }
